@@ -113,13 +113,14 @@
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      transition: background .35s ease, box-shadow .35s ease;
-    }
-    #navbar.scrolled {
-      background: rgba(245, 240, 235, 0.88);
+      background: rgba(245, 240, 235, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 rgba(26,26,26,.08);
+      box-shadow: 0 1px 0 rgba(26,26,26,.06);
+      transition: box-shadow .35s ease;
+    }
+    #navbar.scrolled {
+      box-shadow: 0 1px 0 rgba(26,26,26,.12);
     }
     .nav-inner {
       display: flex;
@@ -1208,6 +1209,35 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
 
+    /* ─── PHOTO PLACEHOLDER LABELS ────────────────────────────────────────── */
+    .photo-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .photo-label svg {
+      width: 28px; height: 28px;
+      opacity: .35;
+    }
+    .photo-label span {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .3;
+    }
+    .photo-label-light svg,
+    .photo-label-light span { color: var(--charcoal); }
+    .photo-label-dark svg,
+    .photo-label-dark span { color: var(--white); }
+
     /* ─── SECTION DIVIDERS ─────────────────────────────────────────────────── */
     .hr-gold {
       height: 1px;
@@ -1309,8 +1339,17 @@
 
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-img-stack">
-          <div class="hero-img-main"></div>
-          <div class="hero-img-secondary"></div>
+          <div class="hero-img-main" style="position:relative;">
+            <div class="photo-label photo-label-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span>Foto del proyecto</span>
+            </div>
+          </div>
+          <div class="hero-img-secondary" style="position:relative;">
+            <div class="photo-label photo-label-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
           <div class="hero-badge">
             <div class="hero-badge-num">327</div>
             <div class="hero-badge-txt">Proyectos<br>realizados</div>
@@ -1361,9 +1400,22 @@
         </div>
 
         <div class="about-visual reveal reveal-delay-1" aria-hidden="true">
-          <div class="about-img-1"></div>
-          <div class="about-img-2"></div>
-          <div class="about-img-3"></div>
+          <div class="about-img-1" style="position:relative;">
+            <div class="photo-label photo-label-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span>Foto del proyecto</span>
+            </div>
+          </div>
+          <div class="about-img-2" style="position:relative;">
+            <div class="photo-label photo-label-light">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
+          <div class="about-img-3" style="position:relative;">
+            <div class="photo-label photo-label-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
           <div class="about-accent-dot"></div>
         </div>
       </div>
